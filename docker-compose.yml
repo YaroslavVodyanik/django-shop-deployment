@@ -1,0 +1,19 @@
+services:
+  web:
+    build: .
+    restart: always
+    env_file:
+      - .env
+    environment:
+      DJANGO_DEBUG: "1"
+      DJANGO_ALLOWED_HOSTS: "201.51.30.90,localhost,127.0.0.1"
+      DJANGO_DB_PATH: "/data/db.sqlite3"
+    ports:
+      - "${APP_PORT:-8000}:8000"
+    volumes:
+      - sqlite_data:/data
+      - media_data:/app/mysite/uploads
+
+volumes:
+  sqlite_data:
+  media_data:

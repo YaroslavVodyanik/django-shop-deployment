@@ -1,0 +1,9 @@
+.git
+.idea
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.venv/
+db.sqlite3
+staticfiles/
